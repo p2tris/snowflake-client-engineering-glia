@@ -14,9 +14,6 @@ export default () => (
       text-decoration: underline;
     }
   `}</style>
-    <h2>⚠️ Heads up: Medium isn’t using this tool anymore, but you’re welcome to!</h2>
-    <p>
-      <a href="https://medium.engineering/engineering-growth-at-medium-4935b3234d25">Read more about our current thinking around engineer growth</a>.
-    </p>
+    <h2>⚠️ This is Glia Client Engineering Growth version!</h2>
   </div>
 )

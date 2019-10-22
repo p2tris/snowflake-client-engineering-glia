@@ -1,7 +1,7 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
+export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'INTEGRATIONS' |
   'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
   'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
   'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
@@ -11,7 +11,7 @@ export type MilestoneMap = {
   'MOBILE': Milestone,
   'WEB_CLIENT': Milestone,
   'FOUNDATIONS': Milestone,
-  'SERVERS': Milestone,
+  'INTEGRATIONS': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
   'COMMUNICATION': Milestone,
   'CRAFT': Milestone,
@@ -74,7 +74,7 @@ type Tracks = {|
   'MOBILE': Track,
   'WEB_CLIENT': Track,
   'FOUNDATIONS': Track,
-  'SERVERS': Track,
+  'INTEGRATIONS': Track,
   'PROJECT_MANAGEMENT': Track,
   'COMMUNICATION': Track,
   'CRAFT': Track,
@@ -95,64 +95,55 @@ export const tracks: Tracks = {
     "category": "A",
     "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
     "milestones": [{
-      "summary": "Works effectively within established iOS or Android architectures, following current best practices",
+      "summary": "Works effectively within established iOS or Android Glia SDKs, following current best practices",
       "signals": [
-        "Delivers features requiring simple local modifications",
-        "Adds simple actions that call server endpoints",
+        "Troubleshoots native mobile apps using real devices and emulators",
+        "Creates clear and understandable dev tickets of mobile issues",
         "Reuses existing components appropriately",
       ],
       "examples": [
-        "Added existing button to a different iOS surface",
-        "Add follow button for publications on Android",
-        "Fetched and displayed a new stream, using existing stream item styles",
+        "Reproducing client reported issues on native apps",
+        "Reading and understanding app logs",
+        "Leads working session with client with dev",
+        "Gathers sufficient info for devs and formats properly in ticets",
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
       "signals": [
-        "Defines new useful and appropriate proto-generated objects",
-        "Creates simple new activities on Android",
-        "Migrates code from old patterns to new patterns",
+        "Understands clients implementations and code",
+        "Able to set up simple app to replicate client setup and issues",
+        "Able to have mobile SDK related debug session with client without devs and solve the problem",
+        "Proposes solutions to client issues pointing to proper methods in SDK",
       ],
       "examples": [
-        "Upgraded SDWebImage to a new major version",
-        "Added support for rendering a new type of stream item",
-        "Prototyped a simple new feature quickly",
+        "Sets up/develops simple app to replicate client issue",
+        "Propose solution to the issue with code examples, point out the place where issue comes from",
+        "Successful working session with client without dev help about mobile SDK implementation",
+        "Explains to client what to use and how without dev help",
       ],
     }, {
       "summary": "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
       "signals": [
-        "Implements complex features with a large product surface area",
-        "Works effectively with  Android reactive programming framework",
-        "Adds support for new iOS features after a major iOS version upgrade",
+        "Complete understanding of Glia mobile SDKs",
       ],
       "examples": [
-        "Designed iOS caching strategy for offline reading",
-        "Built series reader on Android",
-        "Informed the team about recent best practice changes and deprecations",
+        "Develops sample apps using all the functionality provided by Glia mobile SDK (Android/iOS) and makes it open source",
       ],
     }, {
       "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
       "signals": [
-        "Pioneers architecture migration strategies that reduce programmer burden",
-        "Fixes subtle memory management issues",
-        "Implements interactive dismissals that bring delight",
+        "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
       ],
       "examples": [
-        "Upgraded CocoaPods to a new major version",
-        "Designed architecture for fetching and rendering stream items",
-        "Migrated Android persistance layer to reactive programming",
+        "fixing bugs for mobile SDK, Adding test to mobile SDK",
       ],
     }, {
-      "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
+      "summary": "Is an expert in mobile engineering or sets strategic mobile direction for an eng team",
       "signals": [
-        "Defines long-term goals and ensures active projects are in service of them",
-        "Designs and builds innovative, industry-leading UI interactions",
-        "Invents new techniques to responsibly stretch limits of the Android platform",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev tracks!",
       ],
       "examples": [
-        "Defined and drove complete migration plan to Swift or Kotlin",
-        "Implemented Android recycler views before platform support existed",
-        "Pioneered application-level abstractions for multi-app environment",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev tracks!",
       ],
     }],
   },
@@ -164,62 +155,52 @@ export const tracks: Tracks = {
     "milestones": [{
       "summary": "Works effectively within established web client architectures, following current best practices",
       "signals": [
-        "Makes minor modifications to existing screens",
-        "Fixes simple design quality issues",
-        "Uses CSS appropriately, following style guide",
+        "Troubleshoot web client issues",
+        "Knows way around in dev tools",
+        "Able to call/execute JS in web console",
       ],
       "examples": [
-        "Implemented sticky footer on the post page",
-        "Hooked up the action to dismiss a post from a stream",
-        "Built PaymentHistory screen using ResponseScreen",
+        "Troubleshoot issues, understand where the problem is in a way that proper dev ticket can be created",
+        "Understands REST API, JS SDK to clone site, add bulk users etc. using/modifying existing code snippets",
+        "Understands, finds correct HTML elements for business rules",
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
       "signals": [
-        "Makes sensible abstractions based on template and code patterns",
-        "Specs and builds interactive components independently",
-        "Prototypes simple new features quickly",
+        "Creates new code snippets using SDK/API",
+        "Able to propose updates for existing behaviour/issue",
       ],
       "examples": [
-        "Built credit card input component",
-        "Created shared buttons template",
-        "Built modal system",
+        "Creates new scripts using APIs/SDKs to do bulk operations, modifications, updates - bulk adding operators, bulk adding transfer numbers",
+        "Code snippets using JS SDK to set up queue buttons",
+        "Understands CSS issues, is able to propose solutions to devs",
       ],
     }, {
       "summary": "Designs major new features and demonstrates a nuanced understanding of browser constraints",
       "signals": [
-        "Provides useful design feedback and suggests feasible alternatives",
-        "Performs systemic tasks to significantly minimise bundle size",
-        "Acts a caretaker for all of web client code",
+        "Understands and implements fully the visitor app using REST API and JS SDK, open sources the sample project as example",
       ],
       "examples": [
-        "Designed font loading strategy for Medium",
-        "Researched utility of service workers for Medium",
-        "Designed and implemented ResponseScreen",
+        "Implements JS SDK to create custom visitor app solution and open sources it - custom flow and custom behaviour of the app",
+        "Creates custom skin (CSS, HTML) using JS SDK and open sources it",
       ],
     }, {
       "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
       "signals": [
-        "Pioneers architecture migrations that reduce programmer burden",
+        "Pioneers architecture migrations that reduce CE burden",
         "Implements complex UI transitions that bring delight",
         "Makes architectural decisions that eliminate entire classes of bugs",
       ],
       "examples": [
-        "Designed Medium's post morpher and delta system",
-        "Implemented Medium's scrolling text over image blur",
-        "Designed and pioneered proto-based model storage",
+        "Creating tools to collect more data from the client using JS SDK - IE, firefox, mobile even. Similar to Twilio tool for WebRTC debug",
       ],
     }, {
-      "summary": "Is an industry-leading expert in web client or sets strategic web client direction for an eng team",
+      "summary": "Is an expert in web client or sets strategic web client direction for an eng team",
       "signals": [
-        "Invents new techniques to innovate and overcome browser constraints",
-        "Identifies and solved systemic problems with current architecture",
-        "Defines a long-term vision for web client and ensures projects are in service of it",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev tracks!",
       ],
       "examples": [
-        "Invented CSS in JS",
-        "Defined and drove migration strategy to Lite",
-        "Implemented unidirectional data flow to completion",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev tracks!",
       ],
     }],
   },
@@ -227,133 +208,112 @@ export const tracks: Tracks = {
   "FOUNDATIONS": {
     "displayName": "Foundations",
     "category": "A",
-    "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
+    "description": "Develops expertise in foundational systems, databases and OS",
     "milestones": [{
       "summary": "Works effectively within established structures, following current best practices",
       "signals": [
-        "Writes thorough postmortems for service outages",
-        "Makes simple configuration changes to services",
-        "Performs backfills safely and effectively, without causing pages",
+        "Able to use redash, able to gather relevant info from the system logs",
       ],
       "examples": [
-        "Made safe and effective Ansible changes",
-        "Implemented new ETL pipelines based on existing ones",
-        "Resolved out of disk errors independently",
+        "Creates new and understands existing redash queries",
+        "Able to set up bot to own test site",
+        "Reads and understands logs so is able to reproduce flow",
+        "Explaining password policy to client. Explaining security that we have in place - explains Luhn algorithm that we have for Credit Card info filtering",
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
       "signals": [
-        "Made minor version upgrades to technologies",
-        "Builds machine learning jobs within the ML framework",
-        "Triages service issues correctly and independently",
+        "Understanding DB schema and building on top of that complex queries in redash",
+        "Able to create DB migrations for bulk actions, updates",
       ],
       "examples": [
-        "Upgraded NodeJS from 8.0 to 8.1.1",
-        "Built custom packages for RPMs",
-        "Improved ETL efficiency by improving Dynamo to S3 loading",
+        "Creates DB migration to bulk update, creates complex redash queries",
+        "Creates complex AI setup with transfers etc",
+        "Creating zipkin or logstash prebuilt queries",
+        "Setting up SAML with client, explaining security to client",
       ],
     }, {
       "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
       "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Designs moderately complex systems",
-        "Makes major version upgrades to libraries",
+        "Creating or improving existing system with a complex update",
+        "Understand how DB and GitHub and other infrastructure parts works and behave",
       ],
       "examples": [
-        "Designed Ansible configuration management",
-        "Built Medium's realtime stats pipeline",
-        "Designed flexible framework for writing machine learning jobs",
+        "Creating/Improving CIE",
+        "Adding new tables to Redash",
+        "Adding a new locale",
       ],
     }, {
       "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
       "signals": [
-        "Designs complex projects that encompass multiple systems and technologies",
-        "Demonstrates deep knowledge of foundational systems",
-        "Introduces new databases and technologies to meet underserved needs",
+        "Builds or implements multi system tools for others to use",
       ],
       "examples": [
-        "Designed and built BBFD",
-        "Designed AWS configuration management",
+        "Implementing redash/kibana",
+        "Implementing centralised logging system with Glia, AWS, Twilio etc. logs",
         "Introduced Kinesis and pioneered streaming events pipeline",
       ],
     }, {
-      "summary": "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
+      "summary": "Is an expert in foundational engineering or sets strategic foundational direction for an eng team",
       "signals": [
-        "Designs transformational projects in service of long-term goals",
-        "Defines the strategic vision for foundational work and supporting technologies",
-        "Invents industry-leading techniques to solve complex problems",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev ops, backend, infra dev track!",
       ],
       "examples": [
-        "Invented a novel ML technique that advanced the state of the art",
-        "Defined and developed Medium's continuous delivery strategy",
-        "Developed and implemented HA strategy",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev ops, backend, infra dev track!",
       ],
     }],
   },
 
-  "SERVERS": {
-    "displayName": "Servers",
+  "INTEGRATIONS": {
+    "displayName": "Integrations",
     "category": "A",
-    "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
+    "description": "Develops expertise in external, integratale systems such as SalesForce, Twilio, Amazon Connect etc.",
     "milestones": [{
-      "summary": "Works effectively within established server side frameworks, following current best practices",
+      "summary": "Works effectively within established integrations, following current best practices",
       "signals": [
-        "Adds NodeJS endpoints using layers architecture",
-        "Adds golang endpoints using Gotham architecture",
-        "Makes minor server changes to support client needs",
+        "Understands and is able to make updates to existing integrations",
       ],
       "examples": [
-        "Added IFTTT trigger for new bookmark to medium2",
-        "Added delete audio route to Buggle",
-        "Queried a Dynamo LSI appropriately",
+        "Troubleshooting integration",
+        "Updates twilio flow/aws connect flow, adds new users and configures them in aws flow, updates lambdas",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Develops new instances of existing architecture, or major improvements to existing architecture",
       "signals": [
-        "Assesses correctness and utility of existing code and avoids blind copy-pasting",
-        "Generalizes code when appropriate",
-        "Determines data needs from product requirements",
+        "Creates new basic integration for client",
+        "Integrates it with more than 1 system (i.e aws connect, lambda, salesforce)",
       ],
       "examples": [
-        "Identified need for new index on Dynamo",
-        "Acted as caretaker for routes protos",
-        "Updated Facebook API version and codebase dependencies",
+        "Sets up complete new aws flow to a client from scratch",
       ],
     }, {
       "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
       "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Integrates third party services effectively",
-        "Writes playbooks for new service maintenance",
+        "Understands completely integration and architectural needs for new setup, executes it",
       ],
       "examples": [
-        "Implemented Google Auth login to Medium",
-        "Implemented payments integration with Stripe",
-        "Built Textshots server",
+        "Sets up multiple flows and complex multi system integration",
+        "Creates lambdas and optimized flows",
+        "Designs solution for client",
       ],
     }, {
       "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
       "signals": [
         "Delivers complex systems that achieve their goals",
         "Avoids subtle architectural mistakes when considering new systems",
-        "Makes appropriate buy vs build choices",
       ],
       "examples": [
-        "Designed Medium's ranked feed architecture",
-        "Designed custom domains architecture",
-        "Created Gotham framework for creating Go services",
+        "Come up with own visitor app flow that is open source, best practices recomended by glia, how to use the SDK",
+        "Create Twilio, SalesForce package that integrates Glia. Greating integration with 3rd party",
+        "Create Lambda that pushes and moves data between systems and open sourcing, making accessible to public (best practices are used)",
       ],
     }, {
-      "summary": "Is an industry-leading expert in server side engineering or sets strategic server side direction for an eng team",
+      "summary": "Is an expert in server side engineering or sets strategic server side direction for an eng team",
       "signals": [
-        "Designs transformational projects of significant complexity and scope",
-        "Makes decisions that have positive, long term, wide ranging consequences",
-        "Identifies and solves systemic problems with current architecture",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev tracks!",
       ],
       "examples": [
-        "Researched, vetted, and selected Go as Medium's statically typed language",
-        "Defined microservices architecture and medium2 migration plan",
-        "Defined and implemented proprietary IP core to the company's success",
+        "Congrats - you are now maxed out, we have more challenges waiting for you, prob you want to explore dev tracks!",
       ],
     }],
   },
@@ -367,12 +327,11 @@ export const tracks: Tracks = {
       "signals": [
         "Estimates small tasks accurately",
         "Delivers tightly-scoped projects efficiently",
-        "Writes effective technical specs outlining approach",
       ],
       "examples": [
-        "Wrote the technical spec for featured post images",
-        "Delivered stream item support for email digests",
-        "Delivered payment history dashboard",
+        "Work through own tickets that are assigned",
+        "Identifying when pairing is needed from CE or DEVs",
+        "Asking relevant info from client",
       ],
     }, {
       "summary": "Effectively delivers small personal projects",
@@ -382,9 +341,8 @@ export const tracks: Tracks = {
         "Defines and hits interim milestones",
       ],
       "examples": [
-        "Delivered promo editor",
-        "Delivered audio uploading for web client",
-        "Executed the recommends to claps backfill",
+        "Create audit for client cofiguration to bring clarity",
+        "Handling new site setup",
       ],
     }, {
       "summary": "Effectively delivers projects through a small team",
@@ -394,33 +352,28 @@ export const tracks: Tracks = {
         "Chooses appropriate project management strategy based on context",
       ],
       "examples": [
-        "Ran project retro to assess improvement opportunities",
-        "Completed launch checklist unprompted for well controlled rollout",
-        "Facilitated project kickoff meeting to get buy-in",
+        "Start and manage new initiative/product (such as CIE) - distribution of work, understanding scope and explaining it",
+        "Running Standups and providing pointers, direction",
+        "Advocating on behalf of the team in planning sessions",
       ],
     }, {
       "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity",
       "signals": [
         "Finds ways to deliver requested scope faster, and prioritizes backlog",
-        "Manages dependencies on other projects and teams",
-        "Leverages recognition of repeated project patterns",
+        "Including different stakeholders to the project in appropriate time. Making sure nothing falls through the cracks predicting and forseeing",
+        "Pushing client to get work done",
+        "Figure out who, what, when needs to do and be on top of coordinating it",
       ],
       "examples": [
-        "Oversaw technical delivery of Hightower",
-        "Managed infrastructure migration to VPC",
-        "Involved marketing, legal, and appropriate functions at project start",
+        "Setting up kickoff meetings to start integrations, projects with a client (full client setup)",
       ],
     }, {
       "summary": "Manages major company pushes delivered by multiple teams",
       "signals": [
-        "Considers external constraints and business objectives when planning",
-        "Leads teams of teams, and coordinates effective cross-functional collaboration",
-        "Owns a key company metric",
+        "Borderline between CE and CSM. Handling most of client meetings and moving them from 0 to 100",
       ],
       "examples": [
-        "Managed technical migration to SOA",
-        "Lead technical delivery of 10/7",
-        "Delivered multi-month engineering project on time",
+        "Take over the client handling from CSM in EU from beginning",
       ],
     }],
   },
@@ -435,59 +388,55 @@ export const tracks: Tracks = {
         "Communicates project status clearly and effectively",
         "Collaborates with others with empathy",
         "Asks for help at the appropriate juncture",
+        "Understands when it is necessary to have response reviewed, able to make most client responses individually",
       ],
       "examples": [
-        "Updated The Watch before running a backfill",
-        "Updated project status changes in Asana promptly",
-        "Gave thoughtful check-in and check-out comments",
+        "Makes public comments without review necessary",
+        "Asks CSMs to review sensitive topic responses",
       ],
     }, {
       "summary": "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
       "signals": [
+        "Understands and communicates blockers between stakeholders, sends out public announcements when necessary",
         "Practises active listening and suspension of attention",
         "Ensures stakeholders are aware of current blockers",
         "Chooses the appropriate tools for accurate and timely communication",
       ],
       "examples": [
-        "Received and integrated critical feedback positively",
-        "Created cross-team Slack channel for payments work",
-        "Spoke to domain experts before writing spec",
+        "Incident public announcement, complex system explenations, being able to guide conversation in debug/working sessions for internal meetings",
+        "Set up and take lead in integration slack channel",
+        "Leading investigation, pairing sessions",
       ],
     }, {
       "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholders",
       "signals": [
-        "Resolves communication difficulties between others",
-        "Anticipates and shares schedule deviations in plenty of time",
-        "Manages project stakeholder expectations effectively",
+        "Being able to communicate and take lead in client conversations",
+        "Communication is clear and well structured in those meetings",
       ],
       "examples": [
-        "Directed team response effectively during outages",
-        "Gave a substantial Eng All Hands presentation on React",
-        "Gave notice of upcoming related work in Eng Briefing",
+        "Explaining game plan and purpose in the beginning of meeting, able to clearly communicate how to open dev tools, how to execute console code",
+        "Summarizes and sends summary email at the end and after the meeting",
+        "Able to guide communication in client debug sessions, SDK and other technical talks with clients",
       ],
     }, {
       "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization",
       "signals": [
-        "Communicates project risk and tradeoffs skillfully and with nuance",
-        "Contextualizes and clarifies ambiguous direction and strategy for others",
-        "Negotiates resourcing compromises with other teams",
+        "Able to discuss complex ideas and propose different features with clients. ",
+        "Able to clearly communicate between CSM, devs and client different progress aspects and blockers and ideas",
       ],
       "examples": [
-        "Lead off-site workshop on interviewing",
-        "Wrote Medium's growth framework and rationale",
-        "Aligned the entire organization around claps",
+        "Communicating and understanding different client needs and guiding them clearly and understandably to most suitable direction",
+        "Communicating that in a timely manner (already in planning and idea level) between product owner, dev team, CSM etc",
+        "Explaining and proposing different business rules",
       ],
     }, {
       "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others",
       "signals": [
-        "Defines processes for clear communication for the entire team",
-        "Shares the right amount of information with the right people, at the right time",
-        "Develops and delivers plans to execs, the board, and outside investors",
+        "Clarifying best practices to enable others to use best ways of communication, bringing the communication best practices to repeatable state",
       ],
       "examples": [
-        "Organized half year check-in company offsite",
-        "Created the communication plan for a large organizational change",
-        "Presented to the board about key company metrics and projects",
+        "Designing and adapting the processes working structure (i.e. standups restructure for the best way), Jira tickets fields update with prefilled data",
+        "Organising training session to introduce best practices of communication",
       ],
     }],
   },
@@ -500,61 +449,58 @@ export const tracks: Tracks = {
       "summary": "Delivers consistently good quality work",
       "signals": [
         "Tests new code thoroughly, both locally, and in production once shipped",
-        "Writes tests for every new feature and bug fix",
+        "Documents properly all steps",
         "Writes clear comments and documentation",
+        "Creates high quality dev tickets",
       ],
       "examples": [
         "Caught a bug on Hatch before it went live",
-        "Landed non-trivial PR with no caretaker comments",
-        "Wrote hermetic tests for the happy and sad cases",
+        "Records effectively all debug ideas and results in a ticket for a record and overview before involving other CE or DEV",
+        "Tests client issues and their fixes in different environments additionally",
       ],
     }, {
       "summary": "Increases the robustness and reliability of codebases, and devotes time to polishing products and systems",
       "signals": [
-        "Refactors existing code to make it more testable",
-        "Adds tests for uncovered areas",
-        "Deletes unnecessary code and deprecates proactively when safe to do so",
+        "Reviews created documentations",
+        "Structurizes and proposes updates for existing info",
       ],
       "examples": [
-        "Requested tests for a PR when acting as reviewer",
-        "Reduced the number of zelda fitzgerald exceptions",
-        "Fixed a TODO for someone else in the codebase",
+        "Suggest better structure, order in Confluence/dev docs/support docs",
+        "Writes techincal support documentation",
       ],
     }, {
       "summary": "Improves others' ability to deliver great quality work",
       "signals": [
-        "Implements systems that enable better testing",
-        "Gives thoughtful code reviews as a domain expert",
-        "Adds tooling to improve code quality",
+        "Creating a process to create/update custom code",
+        "Creating a repeatable process and improving it to work and be used by others, automating creation of value",
       ],
       "examples": [
-        "Improved PRB to run the same volume of tests faster",
-        "Simplified hermetic test data modification",
-        "Created fixture system for visual quality",
+        "Setting up and moving custom code to Git Repo",
+        "Creating onboarding document",
+        "Creating Beta validation flow and base template that can be cloned easily",
+        "Creating email templates and convensions to use",
       ],
     }, {
       "summary": "Advocates for and models great quality with proactive actions, and tackles difficult and subtle system issues",
       "signals": [
-        "Builds systems so as to eliminate entire classes of programmer error",
-        "Focuses the team on quality with regular reminders",
-        "Coordinates Watch priorities and projects",
+        "Builds and sets up a system that brings a lot value",
+        "Recognisez and takes action for close to large scale critical situations",
       ],
       "examples": [
-        "Added code coverage reporting to iOS CI pipeline",
-        "Iterated repeatedly to develop Medium's underlines solution",
-        "Defined and oversaw plan for closing Heartbleed vulnerability",
+        "Creates Service desk and sets up workflows and guidelines",
+        "Enforces daily standups (or other necessary means) for critical clients or projects until things get solved",
+        "Introducing the SLA framework",
       ],
     }, {
-      "summary": "Enables and encourages the entire organization to make quality a central part of the development process",
+      "summary": "Enables and encourages the entire organization to make quality a central part of the CE process",
       "signals": [
-        "Defines policies for the engineering org that encourage quality work",
+        "Including other skillbases to widen the organization and expand",
         "Identifies and eliminates single points of failure throughout the organization",
         "Secures time and resources from execs to support great quality",
       ],
       "examples": [
-        "Negotiated resources for Fix-It week with exec team",
-        "Instituted and ensured success of a 20% time policy",
-        "Started The Watch",
+        "Plans and scales the team in multiple locations with high quality, capacity planning, training on a bigger scale",
+        "Introducing summer school training camp for bunch on new people",
       ],
     }],
   },
@@ -566,50 +512,45 @@ export const tracks: Tracks = {
     "milestones": [{
       "summary": "Identifies opportunities for organizational change or product improvements",
       "signals": [
-        "Writes Hatch posts about improvement opportunities",
+        "Pointing out places for improvement in the organisation/workflow/communications etc.",
         "Raises meaningful tensions in tactical meetings",
-        "Asks leadership team probing questions at FAM",
+        "Raising awareness of a problem",
       ],
       "examples": [
-        "Wrote about problems with TTR on Hatch",
-        "Wrote about content policy problems on Hatch",
-        "Reported a site issue in Github",
+        "Pointing out the Jira workflow does not work properly",
+        "Recognise the Beta validation is too time consuming",
       ],
     }, {
       "summary": "Causes change to positively impact a few individuals or minor improvement to an existing product or service",
       "signals": [
-        "Picks bugs off the backlog proactively when blocked elsewhere",
-        "Makes design quality improvements unprompted",
-        "Takes on trust and safety tasks proactively when blocked elsewhere",
+        "Pointing out solutions to problems that could be done",
       ],
       "examples": [
-        "Advocated on own behalf for a change in role",
-        "Implemented flow typing for promises",
-        "Audited web client performance in Chrome and proposed fixes",
+        "Adding CE wishlist board an item to move locale updates to platform",
+        "Proposing solutions proactively to others pointed problems",
+        "Proposing and executing a solution like dev ticket template to improve quality",
       ],
     }, {
       "summary": "Causes change to positively impact an entire team or instigates a minor feature or service",
       "signals": [
-        "Demonstrates concepts proactively with prototypes",
         "Fixes complicated bugs outside of regular domain",
         "Takes ownership of systems that nobody owns or wants",
+        "Demonstrates concepts proactively with prototypes",
       ],
       "examples": [
-        "Defined style guide to resolve style arguments",
-        "Proposed and implemented at-mentions prototype",
-        "Implemented video for Android independently, unprompted",
+        "Take initiative of creating/implementing a useful tool i.e. CIE",
+        "Introducing better logging system and working on implementign it",
+        "Volunteering to be first responder for P1 incidents",
       ],
     }, {
       "summary": "Effects change that has a substantial positive impact on the engineering organization or a major product impact",
       "signals": [
         "Champions and pioneers new technologies to solve new classes of problem",
-        "Exemplifies grit and determination in the face of persistent obstacles",
-        "Instigates major new features, services, or architectures",
       ],
       "examples": [
-        "Created the interviewing rubric and booklet",
-        "Implemented and secured support for native login",
-        "Migrated medium2 to mono repo and bazel",
+        "Coming up with a prototype with some mobile framework like Cordova",
+        "Creating the personal growth framework for CE",
+        "Shaping the OnBoarding process",
       ],
     }, {
       "summary": "Effects change that has a substantial positive impact on the whole company",
@@ -619,7 +560,6 @@ export const tracks: Tracks = {
         "Changes complex organizational processes",
       ],
       "examples": [
-        "Migrated the organization from Holacracy",
         "Built Medium Android prototype and convinced execs to fund it",
         "Convinced leadership and engineering org to move to Medium Lite architecture",
       ],
